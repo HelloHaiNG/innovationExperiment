@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="cn.ssh.entity.Master" table="t_master" lazy="false">
+     <id name="masId" column="masId">
+         <generator class="native"></generator>
+     </id>
+     <property name="masNumber" column="masNumber"></property>
+     <property name="masPassword" column="masPassword"></property>
+     <property name="masName" column="masName"></property>
+     <property name="masSex" column="masSex"></property>
+     <property name="masAcademy" column="masAcademy"></property>
+     <set name="setStudent" inverse="true" cascade="delete">
+        <key column="masId"></key>
+        <one-to-many class="cn.ssh.entity.Student"/>
+     </set>
+     <set name="setClassMission" inverse="true" cascade="delete">
+        <key column="masId"></key>
+        <one-to-many class="cn.ssh.entity.ClassMission"/>
+     </set>
+    </class>
+</hibernate-mapping>

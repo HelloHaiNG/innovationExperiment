@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="cn.ssh.entity.Student" table="t_student" lazy="false">
+     <id name="stuId" column="stuId">
+         <generator class="native"></generator>
+     </id>
+     <property name="stuNumber" column="stuNumber"></property>
+     <property name="stuName" column="stuName"></property>
+     <property name="stuPassword" column="stuPassword"></property>
+     <property name="stuSex" column="stuSex"></property>
+     <property name="stuClassNumber" column="stuClassNumber"></property>
+     <property name="stuAcademy" column="stuAcademy"></property>
+     <property name="stuScore" column="stuScore"></property>
+     <many-to-one name="master" class="cn.ssh.entity.Master" column="masId"></many-to-one>
+    </class>
+</hibernate-mapping>

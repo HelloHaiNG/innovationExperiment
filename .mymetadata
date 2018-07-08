@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="innovationExperiment"
+  id="myeclipse.1495354892054"
+  context-root="/innovationExperiment"
+  j2ee-spec="5.0"
+  archive="innovationExperiment.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

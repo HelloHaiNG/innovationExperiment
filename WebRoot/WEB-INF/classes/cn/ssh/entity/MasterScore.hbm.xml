@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="cn.ssh.entity.MasterScore" table="t_masterscore" lazy="false">
+     <id name="msId" column="msId">
+         <generator class="native"></generator>
+     </id>
+     <property name="msCharacter" column="msCharacter"></property>
+     <property name="msGood" column="msGood"></property>
+     <property name="msFriend" column="msFriend"></property>
+     <property name="masNumber" column="masNumber"></property>
+   </class>
+</hibernate-mapping>

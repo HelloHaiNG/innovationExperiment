@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="cn.ssh.entity.FellowShip" table="t_fellowship" lazy="false">
+     <id name="fesId" column="fesId">
+         <generator class="native"></generator>
+     </id>
+     <property name="fromMasNumber" column="fromMasNumber"></property>
+     <property name="toMasNumber" column="toMasNumber"></property>
+     <property name="fesWhen" column="fesWhen"></property>
+     <property name="fesContent" column="fesContent"></property>
+     <property name="fesResult" column="fesResult"></property>
+     <property name="fesReason" column="fesReason"></property>
+   </class>
+</hibernate-mapping>

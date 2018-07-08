@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+   <package name="/" namespace="/" extends="struts-default">
+      <!-- 其他action -->
+      <action name="other_*" class="otherAction" method="{1}">
+        <!-- 登陆 -->
+        <result name="studentLogin">/jsp/student/index.jsp</result> 
+        <result name="masterLogin">/jsp/master/index.jsp</result> 
+        <result name="adminLogin">/jsp/admin/index.jsp</result>
+        <result name="fail">/first.jsp</result>  
+      </action>
+      
+      <!-- student action -->
+      <action name="student_*" class="studentAction" method="{1}">
+        <!-- 个人中心 -->
+           <!-- 查看个人信息 -->
+           <result name="selfInfo">/jsp/student/self/selfInfo.jsp</result> 
+           <!-- 前往修改密码页面 -->
+           <result name="toUpdatePwdPage">/jsp/student/self/updatePwdPage.jsp</result>
+           <!-- 修改密码 -->
+           <result name="updatePwd">/jsp/student/welcome.jsp</result> 
+           <!-- 退出登陆 -->
+           <result name="exit">/first.jsp</result> 
+        <!-- 军训详解 -->
+           <!-- 军训介绍 -->
+           <result name="toTrainIntroducePage">/jsp/student/trainIntroduce/trainIntroduction.jsp</result> 
+        <!-- 军训教官 -->
+           <!-- 多条件查询教官信息 -->
+           <result name="toFindMasterMoreConditionPage">/jsp/student/masterPart/findMasterMoreCondition.jsp</result>
+           <!-- 分页查询新生信息 -->
+           <result name="studentList">/jsp/admin/masterPart/studentList.jsp</result>
+        <!-- 军训评教 -->
+           <!-- 军训打分 -->
+           <result name="toScorePage">/jsp/master/masterScore/studentList.jsp</result>
+           <!-- 具体打分页面 -->
+           <result name="toScore">/jsp/master/masterScore/score.jsp</result>
+           <!-- 打分 -->
+           <result name="score" type="redirectAction">student_toScorePage</result>
+           <!-- 新生成绩列表 -->
+           <result name="scoreList">/jsp/admin/masterscore/studentList.jsp</result>
+        <!-- 军训更替 -->
+           <!-- 添加新生页面 -->
+           <result name="toAddPage">/jsp/admin/replace/addStudent.jsp</result>
+           <!-- 添加新生 -->
+           <result name="add">/success.jsp</result>
+           <!-- 删除新生 -->
+           <result name="delete">/success.jsp</result>
+      </action>
+      
+      <!-- master action -->
+      <action name="master_*" class="masterAction" method="{1}">
+        <!-- 个人中心 -->
+           <!-- 查看个人信息 -->
+           <result name="selfInfo">/jsp/master/self/selfInfo.jsp</result> 
+           <!-- 前往修改密码页面 -->
+           <result name="toUpdatePwdPage">/jsp/master/self/updatePwdPage.jsp</result>
+           <!-- 修改密码 -->
+           <result name="updatePwd">/jsp/master/welcome.jsp</result> 
+           <!-- 退出登陆 -->
+           <result name="exit">/first.jsp</result>
+         <!-- 军训详解 -->
+           <!-- 军训介绍 -->
+           <result name="toTrainIntroducePage">/jsp/master/trainIntroduce/trainIntroduction.jsp</result> 
+         <!-- 军训教官 -->
+           <!-- 教官列表 -->
+           <result name="masterList">/jsp/student/masterPart/masterList.jsp</result>
+           <!-- 多条件查询教官信息 -->
+           <result name="findMasterMoreCondition">/jsp/student/masterPart/masterList.jsp</result>
+           <!-- 新生列表 -->
+           <result name="studentList">/jsp/master/masterPart/studentList.jsp</result>
+         <!-- 军训更替 -->
+           <!-- 添加教官页面 -->
+           <result name="toAddPage">/jsp/admin/replace/addMaster.jsp</result>
+           <!-- 添加教官 -->
+           <result name="add">/success.jsp</result>
+           <!-- 删除教官 -->
+           <result name="delete">/success.jsp</result>
+           <!-- 发布班级公告 -->
+           <result name="toClassMissionPage">/jsp/master/masterPart/addClassMission.jsp</result>
+         
+      </action>
+      
+      <!-- admin action -->
+      <action name="admin_*" class="adminAction" method="{1}">
+        <!-- 个人中心 -->
+           <!-- 查看个人信息 -->
+           <result name="selfInfo">/jsp/admin/self/selfInfo.jsp</result> 
+           <!-- 前往修改密码页面 -->
+           <result name="toUpdatePwdPage">/jsp/admin/self/updatePwdPage.jsp</result>
+           <!-- 修改密码 -->
+           <result name="updatePwd">/jsp/admin/welcome.jsp</result> 
+           <!-- 退出登陆 -->
+           <result name="exit">/first.jsp</result>
+         <!-- 军训详解 -->
+           <!-- 军训介绍 -->
+           <result name="toTrainIntroducePage">/jsp/admin/trainIntroduce/trainIntroduction.jsp</result> 
+      </action>
+      
+      <!-- fellowship action -->
+      <action name="fellowship_*" class="fellowshipAction" method="{1}">
+        <!-- 军训联谊 -->
+          <!-- 发起联谊页面 -->
+          <result name="toShipPage">/jsp/master/fellowShip/shipPage.jsp</result>
+          <!-- 发起联谊 -->
+          <result name="addShip">/success.jsp</result>
+          <!-- 受邀联谊 -->
+          <result name="beShiped">/jsp/master/fellowShip/beShipList.jsp</result>
+          <!-- 前往受邀联谊页面 -->
+          <result name="toAnswerPage">/jsp/master/fellowShip/answerPage.jsp</result>
+          <!-- 回复受邀联谊 -->
+          <result name="answerFellowShip">/success.jsp</result>
+          <!-- 联谊结果列表与自身有关 -->
+          <result name="shipResultList">/jsp/master/fellowShip/shipResultList.jsp</result>
+          <!-- 全部联谊结果列表 -->
+          <result name="shipAllResultList">/jsp/master/fellowShip/shipResultList.jsp</result>
+        <!-- 军训更替 -->
+           <!-- 删除联谊信息 -->
+           <result name="delete">/success.jsp</result>
+      </action> 
+      
+      <!-- love action -->  
+      <action name="love_*" class="loveAction" method="{1}">
+      <!-- 表白墙 -->
+          <!-- 我要表白页面 -->
+          <result name="toLovePage">/jsp/student/love/lovePage.jsp</result>
+          <!-- 我要表白 -->
+          <result name="addLove" type="redirectAction">love_myLoveList</result>
+          <!-- 我的表白列表 -->
+          <result name="myLoveList">/jsp/student/love/myLoveList.jsp</result>
+          <!-- 表白墙 -->
+          <result name="loveList">/jsp/student/love/loveList.jsp</result> 
+          <!-- 待审核表白 -->
+          <result name="examLove">/jsp/admin/love/examLoveList.jsp</result>
+          <!-- 待审核表白页面 -->
+          <result name="examLovePage">/jsp/admin/love/answerPage.jsp</result> 
+          <!-- 审核表白 -->
+          <result name="answerLove">/success.jsp</result>  
+       <!-- 军训更替 -->
+           <!-- 删除表白信息 -->
+           <result name="delete">/success.jsp</result>     
+      </action> 
+      
+      <!-- chat action -->
+      <!-- 聊天 -->
+         <action name="chat_*" class="cn.ssh.action.ChatAction" method="{1}">
+             <!-- 聊天室页面 -->
+             <result name="toChatPage">/jsp/student/chat/chat.jsp</result>
+         </action>
+         
+      <!-- illegalword action -->
+      <!-- 敏感字 -->
+         <action name="illegalword_*" class="illegalWordAction" method="{1}">
+             <!-- 敏感字列表 -->
+             <result name="list">/jsp/admin/chat/list.jsp</result>
+             <!-- 添加敏感字页面 -->
+             <result name="toAddPage">/jsp/admin/chat/addWord.jsp</result>
+             <!-- 添加敏感字 -->
+             <result name="add" type="redirectAction">illegalword_list</result>
+         </action>
+         
+      <!-- article action -->
+      <!-- 军训来稿 -->
+         <action name="article_*" class="articleAction" method="{1}">
+             <!-- 上传稿件页面 -->
+             <result name="toArticlePage">/jsp/master/article/uploadPage.jsp</result>
+             <!-- 上传稿件 -->
+             <result name="uploadArticle">/success.jsp</result>
+             <interceptor-ref name="defaultStack">
+                <!-- 设置上传文件大小 -->
+              	<param name="fileUpload.maximumSize">209715200</param>
+             </interceptor-ref>
+             <!-- 添加稿件页面 -->
+             <result name="toAddPage">/jsp/admin/article/articlePage.jsp</result>
+             <!-- 添加稿件 -->
+             <result name="add">/success.jsp</result>
+             <!-- 稿件列表 -->
+             <result name="list">/jsp/student/article/list.jsp</result>
+             <!-- 稿件内容 -->
+             <result name="look">/jsp/student/article/content.jsp</result>
+           <!-- 军训更替 -->
+           <!-- 删除稿件信息 -->
+           <result name="delete">/success.jsp</result>
+         </action>
+         
+       <!-- masterscore action -->
+       <!-- 评教 -->
+          <action name="masterscore_*" class="masterScoreAction" method="{1}">
+             <!-- 前往评教页面 -->
+             <result name="toScorePage">/jsp/student/masterScore/scorePage.jsp</result>
+             <!-- 评教 -->
+             <result name="score">/success.jsp</result>
+             <!-- 查询自身评教结果 -->
+             <result name="listSelf">/jsp/master/masterScore/listSelf.jsp</result>
+             <!-- 查看所有评教列表 -->
+             <result name="list">/jsp/admin/masterscore/list.jsp</result>
+          </action>
+          
+        <!-- classmission action -->
+        <!-- 发布公告 -->
+           <action name="classmission_*" class="classMissionAction" method="{1}">
+             <!-- 发布公告 -->
+             <result name="add">/success.jsp</result>
+             <!-- 查看公告 -->
+             <result name="viewClassMission">/jsp/student/masterPart/classMissionList.jsp</result>
+           </action>
+    </package>
+</struts> 

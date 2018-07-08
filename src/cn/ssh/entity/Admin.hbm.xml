@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="cn.ssh.entity.Admin" table="t_admin" lazy="false">
+     <id name="admId" column="admId">
+         <generator class="native"></generator>
+     </id>
+     <property name="admNumber" column="admNumber"></property>
+     <property name="admPassword" column="admPassword"></property>
+     <property name="admName" column="admName"></property>
+   </class>
+</hibernate-mapping>
